@@ -1,0 +1,87 @@
+
+.boite
+{
+    border: 1px solid black;
+    border-radius: 100px;
+}
+
+.range
+{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    border-radius: 100px;
+    margin: 25px;   
+}
+
+.case, .caseor
+{
+    border: 1px solid black;
+    border-radius: 200px;
+    padding: 50px;  
+    font-size: 25px;
+}
+
+.point
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.scorej1, .scorej2
+{
+    border: 1px solid black;
+    padding: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.message
+{
+    text-align: center;
+    font-size: 50px;
+}
+
+/* .next
+{
+    display: inline-block;
+    font-size: 50px;
+    border: 1px solid blue;
+    padding: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    margin-left: 40%;
+    visibility: hidden;
+}
+
+.restart
+{
+    border: 1px solid rgb(248, 173, 185);
+    border-radius: 100px;
+    padding: 50px;
+    padding-left: 100px;
+    padding-right: 100px;   
+    font-size: 20px;
+    color: white;
+    background-color: rgb(248, 173, 185);
+    cursor: pointer;
+} */
+
+.joueur1, .joueur2
+{
+    display: inline-block;
+    border: 1px solid black;
+    padding: 10px;
+    margin-left: 50%;
+}
+
+.adversaire1, .adversaire2, .le_connecte
+{
+    visibility: hidden;
+}
+body
+{
+    background-color: pink;
+}

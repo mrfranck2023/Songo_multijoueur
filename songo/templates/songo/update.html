@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src="https://code.jquery.com/jquery-3.7.0.js"
+    integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>  
+
+    <link rel="stylesheet" href="{% static 'songo/style.css' %}">  
+    <title>Document</title>
+</head>
+<body>
+    {% if  user.is_authenticated %}
+    {{ user.username }}
+    
+    <a href="{% url 'deconnexion' %}">Se deconnecter</a>
+
+
+  {% if nbrconnecte >= 2 %}
+  <p>BIENVENUE DANS LE JEU SONGO MULTIJOUEUR</p>
+
+<p class="joueur1">{{players.0.nom}}</p>
+<div class="boite">
+    <div class="range">
+        <p class="caseor" id="case1">5</p>
+        <p class="caseor" id="case2">5</p>
+        <p class="caseor" id="case3">5</p>
+        <p class="caseor" id="case4">5</p>
+        <p class="caseor" id="case5">5</p>
+        <p class="caseor" id="case6">5</p>
+        <p class="caseor" id="case7">5</p>
+    </div>
+    <div class="point">
+        <p class="scorej1">0</p>
+        <p class="restart"></p>
+        <p class="scorej2">0</p>
+    </div>
+    <div class="range">
+        <p class="case" id="case8">5</p>
+        <p class="case" id="case9">5</p>
+        <p class="case" id="case10">5</p>
+        <p class="case" id="case11">5</p>
+        <p class="case" id="case12">5</p>
+        <p class="case" id="case13">5</p>
+        <p class="case" id="case14">5</p>
+    </div>
+</div> 
+<br>
+<br>
+<p class="joueur2">{{players.1.nom}}</p>
+<p class="message">QUE LA PARTIE COMMENCE</p>
+<p class="adversaire1">{{players.0.nom}}</p>
+<p class="adversaire2">{{players.1.nom}}</p>
+<p class="le_connecte">{{ user.username }}</p>
+{% endif %}
+{% else %}
+<a href="{% url 'inscription' %}">S'inscrire</a>
+    <a href="{% url 'connexion' %}">Se connecter</a>
+
+{% endif %}
+
+
+<form action="" method="post" id="post-form" name="monformulaire">
+    {% csrf_token %}
+    
+    <input id="ptns1" type="hidden" name="ptns1" value="" class="ptn">
+    <input id="ptns2" type="hidden" name="ptns2" value="" class="ptn">
+    <input id="ptns3" type="hidden" name="ptns3" value="" class="ptn">
+    <input id="ptns4" type="hidden" name="ptns4" value="" class="ptn">
+    <input id="ptns5" type="hidden" name="ptns5" value="" class="ptn">
+    <input id="ptns6" type="hidden" name="ptns6" value="" class="ptn">
+    <input id="ptns7" type="hidden" name="ptns7" value="" class="ptn">
+    <input id="ptns8" type="hidden" name="ptns8" value="" class="ptn">
+    <input id="ptns9" type="hidden" name="ptns9" value="" class="ptn">
+    <input id="ptns10" type="hidden" name="ptns10" value="" class="ptn">
+    <input id="ptns11" type="hidden" name="ptns11" value="" class="ptn">
+    <input id="ptns12" type="hidden" name="ptns12" value="" class="ptn">
+    <input id="ptns13" type="hidden" name="ptns13" value="" class="ptn">
+    <input id="ptns14" type="hidden" name="ptns14" value="" class="ptn">
+    <input id="score1" type="hidden" name="score1" value="" class="scr">
+    <input id="score2" type="hidden" name="score2" value="" class="scr">
+    <input type="submit" value="send" id="envoi">
+
+    </form>
+
+
+    <script src="{% static 'songo/monjavascript.js' %}"></script>
+
+
+</body>
+</html>
